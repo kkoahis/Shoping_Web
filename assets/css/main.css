@@ -1,3 +1,7 @@
+.wrapper {
+  overflow: hidden;
+}
+
 .header {
   height: var(--header-height);
   background-image: linear-gradient(0, #fe6433, #f53e2d);
@@ -543,6 +547,15 @@
   padding: 0 8px;
 }
 
+.header__back {
+  padding: 0 12px;
+}
+
+.header__back-icon {
+  font-size: 2.6rem;
+  color: var(--white-color);
+}
+
 .header__logo {
   width: 200px;
 }
@@ -550,6 +563,8 @@
 .header__logo-link {
   text-decoration: none;
   color: transparent;
+  display: block;
+  line-height: 0;
 }
 
 .header__logo-img {
@@ -905,9 +920,58 @@
   display: block;
 }
 
+/* HEADER SORT BAR */
+.header__sort-bar {
+  position: fixed;
+  left: 0;
+  right: 0;
+  background-color: var(--white-color);
+  list-style: none;
+  height: var(--header-sort-bar-height);
+  margin: 0;
+  padding-left: 0;
+  border-top: 2px solid #e5e5e5;
+  border-bottom: 1px solid #e5e5e5;
+  display: none;
+}
+
+.header__sort-item {
+  flex: 1;
+}
+
+.header__sort-link {
+  text-decoration: none;
+  color: var(--text-color);
+  font-size: 1.4rem;
+  display: block;
+  height: 100%;
+  line-height: var(--header-sort-bar-height);
+  text-align: center;
+  position: relative;
+}
+
+.header__sort-link::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  height: 60%;
+  border-left: 1px solid #e5e5e5;
+  transform: translateY(-50%);
+}
+
+.header__sort-item--active .header__sort-link {
+  color: var(--primary-color);
+}
+
+.header__sort-item:first-child .header__sort-link::before {
+  display: none;
+}
+
 /* APP CONTAINER */
 .app__container {
   background-color: #f2f2f2;
+  border-bottom: 4px solid var(--primary-color);
 }
 
 .app__content {
@@ -973,6 +1037,49 @@
 
 .category-item-link:hover {
   cursor: pointer;
+  color: var(--primary-color);
+}
+
+/* MOBILE CATEGORY */
+.mobile-category {
+  position: fixed;
+  left: 0;
+  right: 0;
+  background-color: var(--white-color);
+  margin: 0;
+  display: none;
+}
+
+.mobile-category__list {
+  display: flex;
+  list-style: none;
+  max-width: 100%;
+  overflow-x: auto;
+  margin: 0;
+  padding: 2px 2px 0 2px;
+}
+
+.mobile-category__list::-webkit-scrollbar {
+  display: none;
+}
+
+.mobile-category__item {
+  flex-shrink: 0;
+}
+
+.mobile-category__link {
+  font-size: 1.4rem;
+  color: var(--text-color);
+  line-height: 1.6rem;
+  text-decoration: none;
+  display: block;
+  user-select: none;
+  --webkit-user-select: none;
+  --webkit-tap-highlight-color: transparent;
+  padding: 12px 6px;
+}
+
+.mobile-category__item--active .mobile-category__link {
   color: var(--primary-color);
 }
 
@@ -1227,7 +1334,246 @@ i.home-product-item__like-icon-fill {
 .home-product-item__sale-off-lable {
   font-size: 1.3rem;
   line-height: 1.3rem;
+
   color: var(--white-color);
   position: relative;
   top: 3px;
+}
+
+/* PAGNIATION */
+.home-product__pagination {
+  margin-top: 50px;
+  margin-bottom: 60px;
+  padding-left: 0;
+}
+
+/* FOOTER */
+.footer {
+  margin-top: 125px;
+  background-color: #fbfbfb;
+}
+
+.footer__content {
+  border-top: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.footer__heading {
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  color: #737373;
+  margin-top: 30px;
+}
+
+.footer-list {
+  padding-left: 0;
+  list-style: none;
+}
+
+.footert-item__link-follow,
+.footert-item__link {
+  text-decoration: none;
+  font-size: 1.2rem;
+  color: #737373;
+  padding: 6px 0px;
+  display: block;
+  display: flex;
+  align-items: center;
+}
+
+.footer__list-png {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  padding-left: 0;
+}
+
+.footer__item-png {
+  width: 55px;
+  height: 29px;
+  margin-bottom: 8px;
+  margin-right: 8px;
+  display: inline-flex;
+  align-items: center;
+  flex-wrap: wrap;
+  overflow: hidden;
+}
+
+.footer__background {
+  display: block;
+  background-image: url(https://deo.shopeemobile.com/shopee/shopee-pcmall-live-sg/assets/3ce17addcf90b8cd3952b8ae0ffc1299.png);
+}
+
+.footer__visa-png {
+  width: 55px;
+  height: 18px;
+  background-size: 1203.6363636363637% 1194.4444444444443%;
+  background-position: 100% 44.16243654822335%;
+}
+
+.footer__mastercard-png {
+  width: 55px;
+  height: 29px;
+  background-size: 1203.6363636363637% 741.3793103448276%;
+  background-position: 63.26194398682043% 54.83870967741935%;
+}
+
+.footer__jcb-png {
+  width: 55px;
+  height: 23px;
+  background-size: 1203.6363636363637% 934.7826086956521%;
+  background-position: 63.26194398682043% 30.729166666666668%;
+}
+
+.footer__amex-png {
+  width: 55px;
+  height: 29px;
+  background-size: 1324% 977.2727272727273%;
+  background-position: 1.6339869281045751% 5.181347150259067%;
+}
+
+.footer__vncod-png {
+  width: 55px;
+  height: 29px;
+  background-size: 1324% 741.3793103448276%;
+  background-position: 99.50980392156863% 5.376344086021505%;
+}
+
+.footer__installment-png {
+  width: 55px;
+  height: 29px;
+  background-size: 1203.6363636363637% 741.3793103448276%;
+  background-position: 100% 67.20430107526882%;
+}
+
+.footer__shopeepay-png {
+  width: 55px;
+  height: 22px;
+  background-size: 472.85714285714283% 377.1929824561403%;
+  background-position: 86.01532567049809% 6.329113924050633%;
+}
+
+.footer__shopee-express-png {
+  width: 55px;
+  height: 10px;
+  background-size: 596.3963963963964% 1194.4444444444443%;
+  background-position: 20.689655172413794% 66.49746192893402%;
+}
+
+.footer__ghtk-png {
+  width: 55px;
+  height: 18px;
+  background-size: 1203.6363636363637% 1194.4444444444443%;
+  background-position: 42.33937397034597% 41.6243654822335%;
+}
+
+.footer__ghn-png {
+  width: 55px;
+  height: 29px;
+  background-size: 1203.6363636363637% 741.3793103448276%;
+  background-position: 29.9835255354201% 44.086021505376344%;
+}
+
+.footer__viettel-post-png {
+  width: 55px;
+  height: 40px;
+  background-size: 517.1875% 167.96875%;
+  background-position: 85.95505617977528% 100%;
+}
+
+.footer__vietnam-post-png {
+  width: 55px;
+  height: 27px;
+  background-size: 1203.6363636363637% 796.2962962962963%;
+  background-position: 40.362438220757824% 88.29787234042553%;
+}
+
+.footer__jnt-png {
+  width: 55px;
+  height: 16px;
+  background-size: 1203.6363636363637% 1343.75%;
+  background-position: 55.518945634266885% 75.87939698492463%;
+}
+
+.footer__grab-png {
+  width: 55px;
+  height: 15px;
+  background-size: 494.02985074626866% 741.3793103448276%;
+  background-position: 57.765151515151516% 5.376344086021505%;
+}
+
+.footer__ninja-van-png {
+  width: 55px;
+  height: 20px;
+  background-size: 1103.3333333333333% 826.9230769230769%;
+  background-position: 42.691029900332225% 63.492063492063494%;
+}
+
+.footer__best-express-png {
+  width: 39px;
+  height: 22px;
+  background-size: 711.8279569892474% 413.46153846153845%;
+  background-position: 33.74340949033392% 6.134969325153374%;
+}
+
+.footer__be-delivery-png {
+  height: 29px;
+  width: 29px;
+  background-size: 919.4444444444445% 298.6111111111111%;
+  background-position: 15.254237288135593% 6.993006993006993%;
+}
+
+.footert-item__link:hover {
+  color: var(--primary-color);
+}
+
+.footert-item__link-socials:hover {
+  color: var(--primary-color);
+}
+
+.footert-item__icon {
+  font-size: 1.8rem;
+  margin-top: -1px;
+  margin-right: 10px;
+}
+
+.footer__download {
+  display: flex;
+}
+
+.footer__download-qr {
+  width: 80px;
+  height: 80px;
+  border: 1px solid var(--border-color);
+}
+
+.footer__download-apps {
+  margin-left: 14px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.footer__download-apps-img {
+  height: 18px;
+  margin-bottom: 6px;
+}
+
+.footer__download-apps-link {
+  text-decoration: none;
+  color: transparent;
+}
+
+.footer__bottom {
+  background-color: #f5f5f5;
+  min-height: 310px;
+  padding: 125px 0;
+  /* margin-top: 36px; */
+}
+
+.footer__text {
+  margin: 0;
+  font-size: 1.4rem;
+  text-align: center;
+  color: #737373;
 }

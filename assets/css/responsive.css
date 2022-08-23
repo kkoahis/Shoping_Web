@@ -1,0 +1,161 @@
+/* MOBILE & TABLET */
+@media (max-width: 1023px) {
+  .hide-on-mobile-tablet {
+    display: none;
+  }
+
+  .display-on-mobile-tablet {
+    display: block;
+  }
+
+  .header {
+    position: fixed;
+    z-index: 10;
+    top: 0;
+    left: 0;
+    right: 0;
+  }
+
+  .header::before {
+    content: "";
+    background-size: contain;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    background-image: url("/assets/image/Logo_Title/455e3e7eda6a98321de02bcc95c98de0.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    z-index: -1;
+    opacity: 0.75;
+  }
+
+  .app__container {
+    margin-top: calc(var(--header-height) + var(--header-sort-bar-height));
+  }
+
+  .header__sort-bar {
+    display: flex;
+  }
+
+  .header-with-search {
+    justify-content: space-between;
+  }
+
+  .header__cart-wrap {
+    width: unset;
+    --webkit-tap-highlight-color: transparent;
+  }
+
+  .header__cart {
+    width: 50px;
+    text-align: right;
+  }
+
+  .header__sort-icon {
+    color: var(--text-color);
+    font-size: 1.4rem;
+    margin-left: 4px;
+  }
+
+  .mobile-category {
+    display: block;
+  }
+
+  .mobile-category__list {
+    overflow-x: auto;
+    width: max-content;
+    z-index: 10;
+    background-color: var(--while-color);
+  }
+
+  .mobile-category__item {
+    display: inline-block;
+    border: none;
+    width: calc(100vw / 3);
+    text-align: center;
+  }
+
+  .mobile-category__item--active {
+    border-bottom: 2px solid var(--primary-color);
+  }
+}
+
+/* TABLET */
+@media (min-width: 740px) and (max-width: 1023px) {
+  :root {
+    --header-height: 68px;
+    --navbar-height: 0px;
+  }
+
+  .hide-on-tablet {
+    display: none;
+  }
+}
+
+/* MOBILE  */
+@media (max-width: 739px) {
+  :root {
+    --header-height: 54px;
+    --navbar-height: 0px;
+  }
+
+  .hide-on-mobile {
+    display: none;
+  }
+
+  .pagination-item {
+    margin: unset;
+  }
+
+  .app__content {
+    margin: 0 4px;
+  }
+
+  .header__search {
+    height: 38px;
+    margin-left: 12px;
+  }
+
+  .header-with-search {
+    padding: unset;
+  }
+
+  .header__cart-wrap {
+    padding: 0 13px;
+  }
+
+  .header__back {
+    padding: 0 8px 0 20px;
+  }
+
+  .footer__padding {
+    padding: 0 16px;
+  }
+
+  .footer__heading {
+    text-align: center;
+  }
+
+  .footer__download,
+  .footert-item__link {
+    justify-content: center;
+  }
+
+  .footer__download {
+    flex: unset;
+  }
+}
+
+/* PC */
+@media (min-width: 1024px) {
+  .hide-on-pc {
+    display: none;
+  }
+
+  .header__back {
+    display: none;
+  }
+}
